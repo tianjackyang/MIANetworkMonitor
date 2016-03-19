@@ -45,10 +45,6 @@ static MIANetworkMonitor *shareMonitor = nil;
     Reachability *curReach = [notification object];
     NSParameterAssert([curReach isKindOfClass: [Reachability class]]);
     [self updateInternetWithReachability:curReach];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:FINetworkStatusDidChangeNotification
-                                                        object:nil
-                                                      userInfo:nil];
 }
 
 - (void)updateInternetWithReachability:(Reachability*)reach
